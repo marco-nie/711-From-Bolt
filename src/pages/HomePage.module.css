@@ -1,0 +1,131 @@
+.page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(232, 0, 45, 0.12) 0%, transparent 60%),
+              linear-gradient(180deg, #0A1218 0%, #0F1923 100%);
+  min-height: calc(100vh - 60px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.logoBlock {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logoRed { color: #E8002D; }
+.logoDash { color: #FFD100; }
+.logoGreen { color: #00703C; }
+
+.headline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #9BAAB8;
+}
+
+.petPreview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewGlow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 209, 0, 0.15) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.previewCat {
+  width: 180px;
+  height: 200px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+  animation: float 3s ease-in-out infinite;
+}
+
+.features {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.featureCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #1E2D3D;
+  border: 1px solid #2A3F55;
+  border-radius: 12px;
+  padding: 14px 8px;
+}
+
+.featureIcon {
+  font-size: 1.4rem;
+}
+
+.featureText {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #9BAAB8;
+  text-align: center;
+}
+
+.startBtn {
+  background: linear-gradient(135deg, #E8002D, #FF6600);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 48px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(232, 0, 45, 0.35);
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232, 0, 45, 0.5);
+}
+
+.startBtn:active {
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}

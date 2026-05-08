@@ -1,0 +1,95 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  background: #0A1218;
+  border-bottom: 2px solid #E8002D;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.logoRed { color: #E8002D; }
+.logoDash { color: #FFD100; }
+.logoGreen { color: #00703C; }
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #9BAAB8;
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link, .activeLink {
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  color: #9BAAB8;
+}
+
+.link:hover {
+  color: #FFD100;
+  background: rgba(255, 209, 0, 0.08);
+}
+
+.activeLink {
+  color: #FFD100;
+  background: rgba(255, 209, 0, 0.12);
+}
+
+.levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: linear-gradient(135deg, #E8002D, #FF6600);
+  border-radius: 20px;
+  padding: 4px 12px;
+  flex-shrink: 0;
+}
+
+.levelLabel {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.5px;
+}
+
+.levelNum {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #FFD100;
+}
+
+@media (max-width: 480px) {
+  .title { display: none; }
+  .link, .activeLink { padding: 6px 10px; font-size: 0.78rem; }
+}

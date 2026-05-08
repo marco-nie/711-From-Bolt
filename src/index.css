@@ -1,0 +1,53 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --711-red: #E8002D;
+  --711-green: #00703C;
+  --711-orange: #FF6600;
+  --711-yellow: #FFD100;
+  --bg-primary: #0F1923;
+  --bg-secondary: #1A2535;
+  --bg-card: #1E2D3D;
+  --bg-card-hover: #253445;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9BAAB8;
+  --text-accent: #FFD100;
+  --border-color: #2A3F55;
+  --success: #00703C;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Nunito', 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
+
+input {
+  font-family: 'Nunito', sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }

@@ -1,0 +1,359 @@
+.page {
+  flex: 1;
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(180deg, #0F1923 0%, #0A1520 100%);
+  padding: 20px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.headerIcon {
+  font-size: 2.2rem;
+  background: #1E2D3D;
+  border-radius: 14px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2A3F55;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9BAAB8;
+  margin: 0;
+}
+
+.levelCard {
+  background: linear-gradient(135deg, #1E2D3D, #162230);
+  border: 1px solid #2A3F55;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.levelTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.levelCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8002D, #FF6600);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(232, 0, 45, 0.3);
+  padding-top: 6px;
+  gap: 2px;
+}
+
+.levelNum {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+}
+
+.levelMax {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+}
+
+.levelInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.levelTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.levelSub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9BAAB8;
+}
+
+.levelTrack {
+  height: 6px;
+  background: #1A2535;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.levelFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00703C, #FFD100);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.levelStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.lStat {
+  background: #162230;
+  border-radius: 10px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid #2A3F55;
+}
+
+.lStatVal {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #FFD100;
+}
+
+.lStatLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #9BAAB8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sectionTitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #9BAAB8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: -8px;
+}
+
+.rewardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rewardItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1E2D3D;
+  border: 1px solid #2A3F55;
+  border-radius: 14px;
+  padding: 14px 16px;
+  transition: all 0.2s;
+}
+
+.rewardItem.unlocked {
+  border-color: rgba(0, 112, 60, 0.35);
+  background: linear-gradient(135deg, #1E2D3D, #182A20);
+}
+
+.rewardItem.locked {
+  opacity: 0.6;
+}
+
+.rewardLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rewardEmoji {
+  font-size: 1.6rem;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.rewardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rewardName {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.rewardDesc {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9BAAB8;
+}
+
+.rewardRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.levelPill {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 3px 8px;
+}
+
+.toggleBtn {
+  background: #1A2535;
+  border: 1.5px solid #2A3F55;
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #9BAAB8;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.toggleBtn:hover {
+  border-color: #FFD100;
+  color: #FFD100;
+}
+
+.toggleBtn.active {
+  background: rgba(0, 112, 60, 0.2);
+  border-color: #00703C;
+  color: #00703C;
+}
+
+.lockIcon {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #1E2D3D;
+  border: 1px solid #2A3F55;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.milestonePath {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.milestoneStep {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.milestoneStep:last-child {
+  flex: 0;
+}
+
+.milestoneDot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #162230;
+  border: 2px solid #2A3F55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #9BAAB8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.milestoneDot.reached {
+  background: linear-gradient(135deg, #E8002D, #FF6600);
+  border-color: #FF6600;
+  color: white;
+}
+
+.milestoneConnector {
+  flex: 1;
+  height: 3px;
+  background: #2A3F55;
+  transition: background 0.3s;
+}
+
+.milestoneConnector.filled {
+  background: linear-gradient(90deg, #FF6600, #FFD100);
+}
+
+.milestoneLabels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.milestoneLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9BAAB8;
+  flex: 1;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.milestoneLabel.reached {
+  color: #FFD100;
+}
+
+.resetBtn {
+  background: none;
+  border: 1.5px solid rgba(232, 0, 45, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(232, 0, 45, 0.6);
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+
+.resetBtn:hover {
+  border-color: #E8002D;
+  color: #E8002D;
+  background: rgba(232, 0, 45, 0.06);
+}
