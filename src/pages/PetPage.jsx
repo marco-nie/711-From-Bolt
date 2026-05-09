@@ -1,15 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useGame } from '../context/GameContext'
 import PetCat from '../components/PetCat'
 import HappinessBar from '../components/HappinessBar'
 import styles from './PetPage.module.css'
 
 const LEVEL_THRESHOLDS = [0, 3, 7, 13, 20, 30]
+const BACKEND_URL = 'https://seven11-virtual-pet-backend.onrender.com'
 
 export default function PetPage() {
   const { state, reaction, setPetName, toggleCosmetic } = useGame()
   const [editingName, setEditingName] = useState(!state.petName)
   const [tempName, setTempName] = useState(state.petName || '')
+  const [petMessage, setPetMessage] = useState(null)
+
+  useEffect(() => {
+    if (state.petName) {
+      fetch(`${BACKEND_URL}/profile/${state.petName}`)
+        .then(res => res.json())
+        .then(data => setPetMessage(data.pet_message))
+        .catch(() => setPetMessage(null))
+    }
+  }, [state.petName, state.totalPurchases])
 
   const handleSaveName = () => {
     if (tempName.trim()) {
@@ -56,6 +67,12 @@ export default function PetPage() {
             <button className={styles.petName} onClick={() => { setEditingName(true); setTempName(state.petName) }}>
               {state.petName} <span className={styles.editIcon}>✏️</span>
             </button>
+          )}
+
+          {petMessage && (
+            <div className={styles.reactionMsg}>
+              💬 {petMessage}
+            </div>
           )}
 
           {reaction && (
