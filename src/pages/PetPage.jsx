@@ -12,13 +12,20 @@ export default function PetPage() {
   const [editingName, setEditingName] = useState(!state.petName)
   const [tempName, setTempName] = useState(state.petName || '')
   const [petMessage, setPetMessage] = useState(null)
+  const [predictionMessage, setPredictionMessage] = useState(null)
 
   useEffect(() => {
     if (state.petName) {
       fetch(`${BACKEND_URL}/profile/${state.petName}`)
         .then(res => res.json())
-        .then(data => setPetMessage(data.pet_message))
-        .catch(() => setPetMessage(null))
+        .then(data => {
+          setPetMessage(data.pet_message)
+          setPredictionMessage(data.prediction_message)
+        })
+        .catch(() => {
+          setPetMessage(null)
+          setPredictionMessage(null)
+        })
     }
   }, [state.petName, state.totalPurchases])
 
@@ -67,6 +74,12 @@ export default function PetPage() {
             <button className={styles.petName} onClick={() => { setEditingName(true); setTempName(state.petName) }}>
               {state.petName} <span className={styles.editIcon}>✏️</span>
             </button>
+          )}
+
+          {predictionMessage && (
+            <div className={styles.reactionMsg}>
+              🔮 {predictionMessage}
+            </div>
           )}
 
           {petMessage && (
