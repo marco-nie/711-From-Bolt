@@ -269,3 +269,61 @@
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.adventureBtn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #FF6600, #ff8c00);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.adventureCard {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid #FF6600;
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+}
+
+.adventureStory {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.adventureCta {
+  font-size: 13px;
+  color: #FF6600;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.discountBox {
+  background: rgba(255, 102, 0, 0.15);
+  border: 1px dashed #FF6600;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.discountCode {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FF6600;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.discountText {
+  font-size: 12px;
+  color: #aaaaaa;
+}

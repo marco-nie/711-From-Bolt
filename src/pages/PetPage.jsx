@@ -13,6 +13,8 @@ export default function PetPage() {
   const [tempName, setTempName] = useState(state.petName || '')
   const [petMessage, setPetMessage] = useState(null)
   const [predictionMessage, setPredictionMessage] = useState(null)
+  const [adventure, setAdventure] = useState(null)
+  const [adventureLoading, setAdventureLoading] = useState(false)
 
   useEffect(() => {
     if (state.petName) {
@@ -34,6 +36,22 @@ export default function PetPage() {
       setPetName(tempName.trim())
       setEditingName(false)
     }
+  }
+
+  const sendOnAdventure = () => {
+    if (!state.petName) return
+    setAdventureLoading(true)
+    setAdventure(null)
+
+    setTimeout(() => {
+      fetch(`${BACKEND_URL}/adventure/${state.petName}`)
+        .then(res => res.json())
+        .then(data => {
+          setAdventure(data)
+          setAdventureLoading(false)
+        })
+        .catch(() => setAdventureLoading(false))
+    }, 3000)
   }
 
   const currentThreshold = LEVEL_THRESHOLDS[state.level - 1] ?? 0
@@ -86,6 +104,40 @@ export default function PetPage() {
             <div className={styles.reactionMsg}>
               💬 {petMessage}
             </div>
+          )}
+
+          {adventureLoading && (
+            <div className={styles.reactionMsg}>
+              🐾 {state.petName} is on an adventure... be back soon!
+            </div>
+          )}
+
+          {adventure && !adventureLoading && (
+            <div className={styles.adventureCard}>
+              <div className={styles.adventureStory}>
+                🗺️ {adventure.story}
+              </div>
+              <div className={styles.adventureCta}>
+                📍 {adventure.call_to_action}
+              </div>
+              <div className={styles.discountBox}>
+                <div className={styles.discountCode}>
+                  🎟️ {adventure.discount_code}
+                </div>
+                <div className={styles.discountText}>
+                  {adventure.discount_text}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {!adventureLoading && state.petName && (
+            <button
+              className={styles.adventureBtn}
+              onClick={sendOnAdventure}
+            >
+              🐾 Send {state.petName} on an Adventure!
+            </button>
           )}
 
           {reaction && (
