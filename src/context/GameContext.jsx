@@ -57,7 +57,17 @@ export function GameProvider({ children }) {
 
   const buyItem = (itemId) => {
     const item = ITEMS.find(i => i.id === itemId)
-    if (!item) return
+      if (!item) return
+
+      fetch('https://seven11-virtual-pet-backend.onrender.com/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: state.petName || 'anonymous',
+          event_type: 'purchase',
+          item: item.id
+        })
+      }).catch(err => console.log('Backend error:', err))
 
     setState(prev => {
       const newHappiness = Math.min(100, prev.happiness + item.happiness)
