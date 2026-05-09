@@ -94,7 +94,16 @@ export default function PetPage() {
             </button>
           )}
 
-          {predictionMessage && (
+            {!adventureLoading && state.petName && (
+              <button
+                className={styles.adventureBtn}
+                onClick={sendOnAdventure}
+              >
+                🐾 Send {state.petName} on an Adventure!
+              </button>
+            )}
+
+            {predictionMessage && (
             <div className={styles.reactionMsg}>
               🔮 {predictionMessage}
             </div>
@@ -129,15 +138,6 @@ export default function PetPage() {
                 </div>
               </div>
             </div>
-          )}
-
-          {!adventureLoading && state.petName && (
-            <button
-              className={styles.adventureBtn}
-              onClick={sendOnAdventure}
-            >
-              🐾 Send {state.petName} on an Adventure!
-            </button>
           )}
 
           {reaction && (
